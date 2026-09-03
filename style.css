@@ -1,347 +1,659 @@
-<style>
-        * {
-            box-sizing: border-box;
-        }
+/* =========================================================
+   ARTICLE / PROJECT SUCCESS METRICS
+   Designed to integrate with ogalanets.com
+   ========================================================= */
 
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            line-height: 1.7;
-            color: #1f2937;
-            background: #f5f7fa;
-        }
+.metrics-article {
+    --article-accent: var(--primary);
+    --article-accent-light: var(--primary-light);
+    --article-accent-soft: var(--primary-soft);
+    --article-dark: var(--bg-dark);
+    --article-text: var(--text-main);
+    --article-muted: var(--text-muted);
+    --article-border: var(--border);
+    --article-bg: var(--bg-main);
+    --article-white: var(--bg-white);
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
+    color: var(--article-text);
+    background: var(--article-bg);
+    line-height: 1.75;
+}
 
-        header {
-            background: #111827;
-            color: white;
-            padding: 70px 24px;
-        }
 
-        header .header-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+/* =========================================================
+   HERO
+   ========================================================= */
 
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 13px;
-            font-weight: 700;
-            opacity: 0.7;
-            margin-bottom: 14px;
-        }
+.metrics-article .article-hero {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(79, 107, 255, 0.16),
+            transparent 38%
+        ),
+        var(--bg-dark);
 
-        h1 {
-            font-size: clamp(36px, 5vw, 58px);
-            line-height: 1.1;
-            margin: 0 0 24px;
-        }
+    color: var(--text-light);
+    padding: 90px 20px 80px;
+}
 
-        .lead {
-            font-size: 21px;
-            line-height: 1.6;
-            max-width: 800px;
-            color: #d1d5db;
-            margin: 0;
-        }
+.metrics-article .article-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        h2 {
-            font-size: 32px;
-            line-height: 1.25;
-            margin: 60px 0 20px;
-            color: #111827;
-        }
+.metrics-article .article-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-        h3 {
-            font-size: 22px;
-            margin-top: 36px;
-            color: #111827;
-        }
+    margin-bottom: 18px;
 
-        p {
-            margin: 0 0 18px;
-        }
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 
-        .intro {
-            font-size: 18px;
-            max-width: 900px;
-        }
+    color: var(--primary-light);
+}
 
-        /* Funnel */
+.metrics-article .article-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--primary-light);
+    border-radius: 2px;
+}
 
-        .funnel {
-            max-width: 850px;
-            margin: 40px auto;
-        }
+.metrics-article .article-hero h1 {
+    max-width: 850px;
 
-        .funnel-step {
-            margin: 0 auto 12px;
-            padding: 22px 28px;
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+    margin: 0 0 22px;
 
-        .funnel-step strong {
-            display: block;
-            font-size: 22px;
-            margin-bottom: 3px;
-        }
+    color: #fff;
 
-        .funnel-step span {
-            font-size: 14px;
-            opacity: 0.9;
-        }
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
 
-        .funnel-step:nth-child(1) {
-            width: 100%;
-            background: #374151;
-        }
+.metrics-article .article-lead {
+    max-width: 780px;
 
-        .funnel-step:nth-child(2) {
-            width: 90%;
-            background: #4b5563;
-        }
+    margin: 0 0 24px;
 
-        .funnel-step:nth-child(3) {
-            width: 80%;
-            background: #6b7280;
-        }
+    color: rgba(255,255,255,0.72);
 
-        .funnel-step:nth-child(4) {
-            width: 70%;
-            background: #4b5563;
-        }
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.65;
+}
 
-        .funnel-step:nth-child(5) {
-            width: 60%;
-            background: #111827;
-        }
+.metrics-article .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 
-        /* Cards */
+    color: rgba(255,255,255,0.52);
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin: 30px 0;
-        }
+    font-size: 0.82rem;
+}
 
-        .card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 24px;
-        }
 
-        .card-number {
-            font-size: 14px;
-            font-weight: 700;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
+/* =========================================================
+   ARTICLE CONTAINER
+   ========================================================= */
 
-        .card h3 {
-            margin: 8px 0 10px;
-        }
+.metrics-article .article-container {
+    max-width: 900px;
+    margin: 0 auto;
 
-        .card p {
-            font-size: 15px;
-            color: #4b5563;
-        }
+    padding: 70px 20px 100px;
+}
 
-        /* Formula */
 
-        .formula {
-            background: #111827;
-            color: #f9fafb;
-            padding: 20px 24px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-family: "SFMono-Regular", Consolas, monospace;
-            font-size: 15px;
-            overflow-x: auto;
-        }
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
-        .example {
-            background: white;
-            border-left: 4px solid #6b7280;
-            padding: 20px 24px;
-            margin: 22px 0;
-            border-radius: 0 8px 8px 0;
-        }
+.metrics-article p {
+    max-width: none;
 
-        .example strong {
-            color: #111827;
-        }
+    margin: 0 0 20px;
 
-        /* Tables */
+    color: var(--article-muted);
 
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 28px 0;
-            background: white;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-        }
+    font-size: 1rem;
+    line-height: 1.8;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-        }
+.metrics-article .intro {
+    font-size: 1.12rem;
+    line-height: 1.85;
+}
 
-        th {
-            background: #111827;
-            color: white;
-            text-align: left;
-            padding: 14px 16px;
-            font-size: 14px;
-        }
+.metrics-article h2 {
+    position: relative;
 
-        td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #e5e7eb;
-            vertical-align: top;
-            font-size: 14px;
-        }
+    margin: 72px 0 22px;
 
-        tr:last-child td {
-            border-bottom: none;
-        }
+    color: var(--article-text);
 
-        tbody tr:nth-child(even) {
-            background: #f9fafb;
-        }
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+}
 
-        /* Highlight */
+.metrics-article h2::after {
+    content: "";
 
-        .callout {
-            margin: 35px 0;
-            padding: 28px;
-            border-radius: 10px;
-            background: #e5e7eb;
-        }
+    display: block;
 
-        .callout h3 {
-            margin-top: 0;
-        }
+    width: 52px;
+    height: 3px;
 
-        .quote {
-            font-size: 24px;
-            line-height: 1.45;
-            font-weight: 600;
-            color: #111827;
-            margin: 30px 0;
-            padding-left: 24px;
-            border-left: 4px solid #111827;
-        }
+    margin: 12px 0 0;
 
-        /* Dashboard */
+    background: var(--article-accent-light);
+    border-radius: 3px;
+}
 
-        .dashboard {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 28px;
-            margin: 30px 0;
-        }
+.metrics-article h3 {
+    margin: 38px 0 14px;
 
-        .dashboard-section {
-            margin-bottom: 28px;
-        }
+    color: var(--article-text);
 
-        .dashboard-section:last-child {
-            margin-bottom: 0;
-        }
+    font-size: 1.18rem;
+    line-height: 1.35;
+}
 
-        .dashboard-section h3 {
-            margin: 0 0 12px;
-        }
+.metrics-article strong {
+    color: var(--article-text);
+}
 
-        .dashboard-section ul {
-            margin: 0;
-            padding-left: 22px;
-        }
 
-        /* Comparison */
+/* =========================================================
+   FUNNEL
+   ========================================================= */
 
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 30px 0;
-        }
+.metrics-article .funnel {
+    max-width: 820px;
 
-        .comparison > div {
-            padding: 24px;
-            border-radius: 10px;
-            background: white;
-            border: 1px solid #e5e7eb;
-        }
+    margin: 42px auto;
+    padding: 10px 0;
+}
 
-        .comparison h3 {
-            margin-top: 0;
-        }
+.metrics-article .funnel-step {
+    position: relative;
 
-        /* Final */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-        .final {
-            background: #111827;
-            color: white;
-            padding: 50px;
-            border-radius: 12px;
-            margin-top: 60px;
-        }
+    min-height: 78px;
 
-        .final h2 {
-            color: white;
-            margin-top: 0;
-        }
+    margin: 0 auto 10px;
+    padding: 18px 28px;
 
-        .final .quote {
-            color: white;
-            border-color: #9ca3af;
-        }
+    color: #fff;
+    text-align: center;
 
-        /* Responsive */
+    border-radius: var(--radius-md);
 
-        @media (max-width: 700px) {
-            header {
-                padding: 50px 20px;
-            }
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
 
-            .container {
-                padding: 30px 18px 60px;
-            }
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.10);
 
-            h2 {
-                font-size: 27px;
-                margin-top: 45px;
-            }
+    transition: var(--transition);
+}
 
-            .comparison {
-                grid-template-columns: 1fr;
-            }
+.metrics-article .funnel-step:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.14);
+}
 
-            .funnel-step:nth-child(1),
-            .funnel-step:nth-child(2),
-            .funnel-step:nth-child(3),
-            .funnel-step:nth-child(4),
-            .funnel-step:nth-child(5) {
-                width: 100%;
-            }
+.metrics-article .funnel-step strong {
+    display: block;
 
-            .final {
-                padding: 30px 22px;
-            }
-        }
-    </style>
+    margin-bottom: 3px;
+
+    color: #fff;
+
+    font-size: 1.05rem;
+}
+
+.metrics-article .funnel-step span {
+    color: rgba(255,255,255,0.76);
+
+    font-size: 0.82rem;
+}
+
+
+/* Funnel hierarchy */
+
+.metrics-article .funnel-step:nth-child(1) {
+    width: 100%;
+    opacity: 0.72;
+}
+
+.metrics-article .funnel-step:nth-child(2) {
+    width: 92%;
+    opacity: 0.80;
+}
+
+.metrics-article .funnel-step:nth-child(3) {
+    width: 84%;
+    opacity: 0.88;
+}
+
+.metrics-article .funnel-step:nth-child(4) {
+    width: 76%;
+    opacity: 0.94;
+}
+
+.metrics-article .funnel-step:nth-child(5) {
+    width: 68%;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.metrics-article .cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 18px;
+
+    margin: 30px 0;
+}
+
+.metrics-article .card {
+    padding: 24px;
+
+    background: rgba(255,255,255,0.92);
+
+    border: 1px solid var(--article-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.metrics-article .card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(79,107,255,0.22);
+
+    box-shadow:
+        0 14px 32px rgba(15,23,42,0.09);
+}
+
+.metrics-article .card-number {
+    margin-bottom: 6px;
+
+    color: var(--article-accent);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.metrics-article .card h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.12rem;
+}
+
+.metrics-article .card p {
+    margin: 0;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   FORMULA
+   ========================================================= */
+
+.metrics-article .formula {
+    overflow-x: auto;
+
+    margin: 22px 0;
+
+    padding: 19px 22px;
+
+    color: #e2e8f0;
+
+    background: #0b1226;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid var(--primary-light);
+
+    border-radius: var(--radius-md);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   EXAMPLES
+   ========================================================= */
+
+.metrics-article .example {
+    margin: 22px 0;
+    padding: 20px 24px;
+
+    background: var(--article-white);
+
+    border: 1px solid var(--article-border);
+    border-left: 3px solid var(--primary-light);
+
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+    box-shadow: var(--shadow);
+}
+
+.metrics-article .example strong {
+    color: var(--article-accent);
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.metrics-article .table-wrapper {
+    overflow-x: auto;
+
+    margin: 30px 0;
+
+    background: var(--article-white);
+
+    border: 1px solid var(--article-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow);
+}
+
+.metrics-article table {
+    width: 100%;
+    min-width: 780px;
+
+    border-collapse: collapse;
+}
+
+.metrics-article th {
+    padding: 14px 16px;
+
+    color: #fff;
+
+    background: var(--bg-dark);
+
+    text-align: left;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.metrics-article td {
+    padding: 14px 16px;
+
+    color: var(--article-muted);
+
+    border-bottom: 1px solid var(--border-soft);
+
+    vertical-align: top;
+
+    font-size: 0.88rem;
+}
+
+.metrics-article tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.metrics-article tbody tr:nth-child(even) {
+    background: rgba(15,23,42,0.025);
+}
+
+.metrics-article tbody tr:hover {
+    background: var(--primary-soft);
+}
+
+.metrics-article td strong {
+    color: var(--article-text);
+}
+
+
+/* =========================================================
+   QUOTES / KEY PRINCIPLES
+   ========================================================= */
+
+.metrics-article .quote {
+    margin: 34px 0;
+    padding: 18px 24px;
+
+    color: var(--article-text);
+
+    border-left: 3px solid var(--primary);
+
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   COMPARISON
+   ========================================================= */
+
+.metrics-article .comparison {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin: 30px 0;
+}
+
+.metrics-article .comparison > div {
+    padding: 24px;
+
+    background: var(--article-white);
+
+    border: 1px solid var(--article-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow);
+}
+
+.metrics-article .comparison > div:first-child {
+    border-top: 3px solid rgba(15,23,42,0.28);
+}
+
+.metrics-article .comparison > div:last-child {
+    border-top: 3px solid var(--primary);
+}
+
+.metrics-article .comparison h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   CALLOUT
+   ========================================================= */
+
+.metrics-article .callout {
+    margin: 40px 0;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-soft),
+            rgba(255,255,255,0.7)
+        );
+
+    border: 1px solid rgba(79,107,255,0.15);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+}
+
+.metrics-article .callout h3 {
+    margin-top: 0;
+
+    color: var(--article-text);
+}
+
+.metrics-article .callout p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FINAL CONCLUSION
+   ========================================================= */
+
+.metrics-article .final {
+    margin-top: 72px;
+    padding: 48px;
+
+    color: var(--text-light);
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(79,107,255,0.18),
+            transparent 35%
+        ),
+        var(--bg-dark);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,0.16);
+}
+
+.metrics-article .final h2 {
+    margin-top: 0;
+
+    color: #fff;
+}
+
+.metrics-article .final h2::after {
+    background: var(--primary-light);
+}
+
+.metrics-article .final p {
+    color: rgba(255,255,255,0.72);
+}
+
+.metrics-article .final strong {
+    color: #fff;
+}
+
+.metrics-article .final .quote {
+    color: #fff;
+
+    border-left-color: var(--primary-light);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .metrics-article .article-hero {
+        padding: 65px 20px 55px;
+    }
+
+    .metrics-article .article-hero h1 {
+        font-size: clamp(2.2rem, 11vw, 3.2rem);
+    }
+
+    .metrics-article .article-container {
+        padding: 50px 20px 70px;
+    }
+
+    .metrics-article h2 {
+        margin-top: 52px;
+    }
+
+    .metrics-article .funnel-step {
+        width: 100% !important;
+
+        min-height: 70px;
+
+        padding: 16px 20px;
+    }
+
+    .metrics-article .comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-article .final {
+        padding: 32px 24px;
+    }
+
+    .metrics-article .quote {
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .metrics-article .article-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .metrics-article .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-article .card,
+    .metrics-article .comparison > div {
+        padding: 20px;
+    }
+
+    .metrics-article .formula {
+        padding: 17px 18px;
+
+        font-size: 0.8rem;
+    }
+
+    .metrics-article .callout {
+        padding: 24px 20px;
+    }
+
+    .metrics-article .final {
+        padding: 28px 20px;
+        border-radius: var(--radius-md);
+    }
+}
