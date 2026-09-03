@@ -3,45 +3,1131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Measure Project Success: A Metrics Funnel</title>
-<link rel="stylesheet" href="style.css">
-         
-   
+
+    <title>How to Measure Project Success | Ogalanets</title>
+
+    <meta
+        name="description"
+        content="A practical framework for measuring project success through Inputs, Activities, Outputs, Outcomes and Impact."
+    >
+
+    <meta
+        name="keywords"
+        content="project success, project management, project metrics, KPI, ROI, project performance, outcomes, impact, program management"
+    >
+
+    <meta name="author" content="Ogalanets">
+
+    <style>
+        /* =========================================================
+           Ogalanets — Article Page
+           How to Measure Project Success
+           ========================================================= */
+
+        :root {
+            --primary: #4f6bff;
+            --primary-light: #6f86ff;
+            --primary-dark: #3b52d6;
+            --primary-soft: rgba(79, 107, 255, 0.10);
+
+            --bg-main: #f3f8fa;
+            --bg-white: #ffffff;
+            --bg-dark: #0f172a;
+
+            --text-main: #0b1226;
+            --text-muted: #667085;
+            --text-light: #e2e8f0;
+
+            --border: rgba(15, 23, 42, 0.08);
+            --border-soft: rgba(15, 23, 42, 0.05);
+
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 22px;
+            --radius-xl: 28px;
+
+            --shadow:
+                0 6px 16px rgba(15, 23, 42, 0.06);
+
+            --shadow-lg:
+                0 18px 45px rgba(15, 23, 42, 0.10);
+
+            --container: 1120px;
+            --article-width: 900px;
+
+            --transition: all 0.25s ease;
+        }
+
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-main);
+            color: var(--text-main);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           SITE HEADER
+           ========================================================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .site-header-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+
+            min-height: 72px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+        }
+
+        .site-logo {
+            display: inline-flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: var(--text-main);
+
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .site-logo-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 34px;
+            height: 34px;
+
+            margin-right: 10px;
+
+            color: #fff;
+            background: var(--primary);
+
+            border-radius: 10px;
+
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .site-nav a {
+            color: var(--text-muted);
+
+            text-decoration: none;
+
+            font-size: 0.82rem;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .site-nav a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           ARTICLE HERO
+           ========================================================= */
+
+        .article-hero {
+            position: relative;
+            overflow: hidden;
+
+            color: #fff;
+
+            padding: 90px 20px 82px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(79, 107, 255, 0.20),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(111, 134, 255, 0.08),
+                    transparent 30%
+                ),
+                var(--bg-dark);
+        }
+
+        .article-hero::after {
+            content: "";
+
+            position: absolute;
+            right: -120px;
+            bottom: -160px;
+
+            width: 380px;
+            height: 380px;
+
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        .article-hero-inner {
+            position: relative;
+            z-index: 1;
+
+            max-width: var(--article-width);
+            margin: 0 auto;
+        }
+
+        .article-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 20px;
+
+            color: var(--primary-light);
+
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .article-eyebrow::before {
+            content: "";
+
+            width: 28px;
+            height: 2px;
+
+            background: var(--primary-light);
+
+            border-radius: 2px;
+        }
+
+        .article-hero h1 {
+            max-width: 850px;
+
+            margin: 0 0 24px;
+
+            color: #fff;
+
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.045em;
+        }
+
+        .article-lead {
+            max-width: 780px;
+
+            margin: 0 0 28px;
+
+            color: rgba(255,255,255,0.72);
+
+            font-size: clamp(1.05rem, 2vw, 1.28rem);
+            line-height: 1.7;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+
+            color: rgba(255,255,255,0.48);
+
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .article-meta strong {
+            color: rgba(255,255,255,0.75);
+        }
+
+
+        /* =========================================================
+           ARTICLE CONTAINER
+           ========================================================= */
+
+        .article-container {
+            width: min(
+                calc(100% - 40px),
+                var(--article-width)
+            );
+
+            margin: 0 auto;
+
+            padding: 72px 0 110px;
+        }
+
+
+        /* =========================================================
+           INTRO
+           ========================================================= */
+
+        .article-introduction {
+            margin-bottom: 54px;
+        }
+
+        .article-introduction p {
+            font-size: 1.08rem;
+        }
+
+        .article-introduction p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           TYPOGRAPHY
+           ========================================================= */
+
+        .article-container p {
+            margin: 0 0 20px;
+
+            color: var(--text-muted);
+
+            font-size: 1rem;
+            line-height: 1.82;
+        }
+
+        .article-container strong {
+            color: var(--text-main);
+        }
+
+        .article-container h2 {
+            position: relative;
+
+            margin: 76px 0 22px;
+
+            color: var(--text-main);
+
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+            line-height: 1.25;
+            letter-spacing: -0.025em;
+        }
+
+        .article-container h2::after {
+            content: "";
+
+            display: block;
+
+            width: 52px;
+            height: 3px;
+
+            margin-top: 12px;
+
+            background: var(--primary-light);
+
+            border-radius: 3px;
+        }
+
+        .article-container h3 {
+            margin: 38px 0 14px;
+
+            color: var(--text-main);
+
+            font-size: 1.18rem;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+        }
+
+
+        /* =========================================================
+           METRICS FUNNEL
+           ========================================================= */
+
+        .funnel {
+            max-width: 820px;
+
+            margin: 42px auto 54px;
+        }
+
+        .funnel-step {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            min-height: 78px;
+
+            margin: 0 auto 10px;
+            padding: 18px 28px;
+
+            color: #fff;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            border-radius: var(--radius-md);
+
+            box-shadow:
+                0 8px 24px rgba(15, 23, 42, 0.10);
+
+            transition: var(--transition);
+        }
+
+        .funnel-step:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(15, 23, 42, 0.14);
+        }
+
+        .funnel-step strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #fff;
+
+            font-size: 1.05rem;
+        }
+
+        .funnel-step span {
+            color: rgba(255,255,255,0.76);
+
+            font-size: 0.82rem;
+        }
+
+        .funnel-step:nth-child(1) {
+            width: 100%;
+            opacity: 0.72;
+        }
+
+        .funnel-step:nth-child(2) {
+            width: 92%;
+            opacity: 0.80;
+        }
+
+        .funnel-step:nth-child(3) {
+            width: 84%;
+            opacity: 0.88;
+        }
+
+        .funnel-step:nth-child(4) {
+            width: 76%;
+            opacity: 0.94;
+        }
+
+        .funnel-step:nth-child(5) {
+            width: 68%;
+        }
+
+
+        /* =========================================================
+           KEY PRINCIPLE
+           ========================================================= */
+
+        .quote {
+            margin: 36px 0;
+            padding: 18px 24px;
+
+            color: var(--text-main);
+
+            border-left: 3px solid var(--primary);
+
+            font-size: clamp(1.15rem, 2vw, 1.45rem);
+            font-weight: 600;
+            line-height: 1.55;
+        }
+
+
+        /* =========================================================
+           CARDS
+           ========================================================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+
+            margin: 30px 0;
+        }
+
+        .card {
+            padding: 24px;
+
+            background: rgba(255,255,255,0.94);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(79,107,255,0.22);
+
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-number {
+            margin-bottom: 6px;
+
+            color: var(--primary);
+
+            font-size: 0.7rem;
+            font-weight: 700;
+
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+
+            font-size: 1.12rem;
+        }
+
+        .card p {
+            margin: 0;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           FORMULA BLOCKS
+           ========================================================= */
+
+        .formula {
+            overflow-x: auto;
+
+            margin: 22px 0;
+            padding: 19px 22px;
+
+            color: #e2e8f0;
+
+            background: #0b1226;
+
+            border: 1px solid rgba(255,255,255,0.06);
+            border-left: 3px solid var(--primary-light);
+
+            border-radius: var(--radius-md);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                "Liberation Mono",
+                monospace;
+
+            font-size: 0.88rem;
+            line-height: 1.7;
+
+            white-space: normal;
+        }
+
+
+        /* =========================================================
+           EXAMPLE BLOCKS
+           ========================================================= */
+
+        .example {
+            margin: 22px 0;
+            padding: 20px 24px;
+
+            background: var(--bg-white);
+
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--primary-light);
+
+            border-radius:
+                0
+                var(--radius-md)
+                var(--radius-md)
+                0;
+
+            box-shadow: var(--shadow);
+        }
+
+        .example strong {
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           TABLES
+           ========================================================= */
+
+        .table-wrapper {
+            overflow-x: auto;
+
+            margin: 30px 0;
+
+            background: var(--bg-white);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+
+            box-shadow: var(--shadow);
+
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            min-width: 780px;
+
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 14px 16px;
+
+            color: #fff;
+
+            background: var(--bg-dark);
+
+            text-align: left;
+
+            font-size: 0.76rem;
+            font-weight: 700;
+
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 14px 16px;
+
+            color: var(--text-muted);
+
+            border-bottom: 1px solid var(--border-soft);
+
+            vertical-align: top;
+
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        td strong {
+            color: var(--text-main);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(15,23,42,0.025);
+        }
+
+        tbody tr:hover {
+            background: var(--primary-soft);
+        }
+
+
+        /* =========================================================
+           COMPARISON
+           ========================================================= */
+
+        .comparison {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            margin: 30px 0;
+        }
+
+        .comparison > div {
+            padding: 24px;
+
+            background: var(--bg-white);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+
+            box-shadow: var(--shadow);
+        }
+
+        .comparison > div:first-child {
+            border-top: 3px solid rgba(15,23,42,0.25);
+        }
+
+        .comparison > div:last-child {
+            border-top: 3px solid var(--primary);
+        }
+
+        .comparison h3 {
+            margin-top: 0;
+        }
+
+
+        /* =========================================================
+           CALLOUT
+           ========================================================= */
+
+        .callout {
+            margin: 42px 0;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-soft),
+                    rgba(255,255,255,0.72)
+                );
+
+            border: 1px solid rgba(79,107,255,0.15);
+
+            border-radius: var(--radius-lg);
+
+            box-shadow: var(--shadow);
+        }
+
+        .callout h3 {
+            margin-top: 0;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           FINAL CONCLUSION
+           ========================================================= */
+
+        .final {
+            position: relative;
+            overflow: hidden;
+
+            margin-top: 76px;
+            padding: 50px;
+
+            color: var(--text-light);
+
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(79,107,255,0.18),
+                    transparent 35%
+                ),
+                var(--bg-dark);
+
+            border-radius: var(--radius-lg);
+
+            box-shadow:
+                0 20px 50px rgba(15,23,42,0.16);
+        }
+
+        .final::after {
+            content: "";
+
+            position: absolute;
+            right: -120px;
+            bottom: -180px;
+
+            width: 400px;
+            height: 400px;
+
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        .final > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final h2 {
+            margin-top: 0;
+
+            color: #fff;
+        }
+
+        .final h2::after {
+            background: var(--primary-light);
+        }
+
+        .final p {
+            color: rgba(255,255,255,0.72);
+        }
+
+        .final strong {
+            color: #fff;
+        }
+
+        .final .quote {
+            color: #fff;
+
+            border-left-color: var(--primary-light);
+        }
+
+
+        /* =========================================================
+           ARTICLE FOOTER
+           ========================================================= */
+
+        .article-footer {
+            margin-top: 70px;
+            padding-top: 28px;
+
+            border-top: 1px solid var(--border);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .article-footer-label {
+            color: var(--text-muted);
+
+            font-size: 0.78rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--primary);
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(-3px);
+        }
+
+
+        /* =========================================================
+           SITE FOOTER
+           ========================================================= */
+
+        .site-footer {
+            padding: 34px 20px;
+
+            color: rgba(255,255,255,0.55);
+
+            background: var(--bg-dark);
+
+            text-align: center;
+
+            font-size: 0.78rem;
+        }
+
+        .site-footer strong {
+            color: rgba(255,255,255,0.85);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .site-header-inner {
+                min-height: 64px;
+            }
+
+            .site-nav {
+                display: none;
+            }
+
+            .article-hero {
+                padding: 66px 20px 58px;
+            }
+
+            .article-hero h1 {
+                font-size: clamp(2.25rem, 11vw, 3.3rem);
+            }
+
+            .article-container {
+                width: min(
+                    calc(100% - 32px),
+                    var(--article-width)
+                );
+
+                padding: 52px 0 75px;
+            }
+
+            .article-container h2 {
+                margin-top: 56px;
+            }
+
+            .funnel-step {
+                width: 100% !important;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .final {
+                padding: 34px 24px;
+            }
+
+            .article-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .article-eyebrow {
+                font-size: 0.65rem;
+            }
+
+            .article-lead {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                line-height: 1.7;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card,
+            .comparison > div {
+                padding: 20px;
+            }
+
+            .formula {
+                padding: 17px 18px;
+                font-size: 0.79rem;
+            }
+
+            .example {
+                padding: 18px 19px;
+            }
+
+            .callout {
+                padding: 24px 20px;
+            }
+
+            .quote {
+                padding-left: 18px;
+            }
+
+            .final {
+                padding: 28px 20px;
+                border-radius: var(--radius-md);
+            }
+        }
+
+
+        /* =========================================================
+           ACCESSIBILITY
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(79,107,255,0.35);
+            outline-offset: 3px;
+        }
+    </style>
 </head>
+
 
 <body>
 
-<header>
-    <div class="header-inner">
-        <div class="eyebrow">Project Management · Performance Measurement</div>
-        <h1>How to Measure Project Success</h1>
-        <p class="lead">
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <div class="site-header-inner">
+
+        <a href="/" class="site-logo" aria-label="Ogalanets home">
+            <span class="site-logo-mark">O</span>
+            Ogalanets
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+
+            <a href="/#about">About</a>
+            <a href="/#impact">Impact</a>
+            <a href="/#method">Method</a>
+            <a href="/#insights">Insights</a>
+            <a href="/#credentials">Credentials</a>
+            <a href="/#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     ARTICLE HERO
+     ========================================================= -->
+
+<header class="article-hero">
+
+    <div class="article-hero-inner">
+
+        <div class="article-eyebrow">
+            Project Management · Performance Measurement
+        </div>
+
+        <h1>
+            How to Measure Project Success
+        </h1>
+
+        <p class="article-lead">
             A practical framework for measuring project performance using
             the funnel from Inputs to Activities, Outputs, Outcomes and Impact.
         </p>
+
+        <div class="article-meta">
+
+            <span>Insights</span>
+            <span>·</span>
+            <strong>Project Leadership</strong>
+            <span>·</span>
+            <strong>Performance Measurement</strong>
+
+        </div>
+
     </div>
+
 </header>
 
-<main class="container">
 
-    <p class="intro">
-        Measuring project success sounds simple: Was the project delivered on time?
-        Did it stay within budget? Were the objectives achieved?
-    </p>
+<!-- =========================================================
+     ARTICLE
+     ========================================================= -->
 
-    <p class="intro">
-        In practice, it is much more complicated. A project can be delivered on
-        time and within budget and still fail to create meaningful value.
-        Conversely, a project can experience delays or scope changes while
-        ultimately generating significant business benefits.
-    </p>
+<main class="article-container">
 
-    <p class="intro">
-        The solution is to measure project performance as a
-        <strong>metrics funnel</strong>:
-    </p>
 
-    <div class="funnel">
+    <!-- INTRODUCTION -->
+
+    <section class="article-introduction">
+
+        <p>
+            Measuring project success sounds simple:
+            Was the project delivered on time?
+            Did it stay within budget?
+            Were the objectives achieved?
+        </p>
+
+        <p>
+            In practice, it is much more complicated.
+            A project can be delivered on time and within budget and still
+            fail to create meaningful value. Conversely, a project can
+            experience delays or scope changes while ultimately generating
+            significant business benefits.
+        </p>
+
+        <p>
+            The solution is to measure project performance as a
+            <strong>metrics funnel</strong>:
+        </p>
+
+    </section>
+
+
+    <!-- FUNNEL -->
+
+    <div class="funnel" aria-label="Project success metrics funnel">
+
         <div class="funnel-step">
             <strong>Inputs</strong>
             <span>What resources did we invest?</span>
@@ -66,17 +1152,25 @@
             <strong>Impact</strong>
             <span>What measurable value did we create?</span>
         </div>
+
     </div>
+
+
+    <!-- =========================================================
+         1
+         ========================================================= -->
 
     <h2>1. The Project Success Funnel</h2>
 
     <p>
-        The five levels of the funnel answer different questions. Together,
-        they provide a complete view of project performance.
+        The five levels of the funnel answer different questions.
+        Together, they provide a complete view of project performance.
     </p>
 
     <div class="table-wrapper">
+
         <table>
+
             <thead>
                 <tr>
                     <th>Funnel level</th>
@@ -84,34 +1178,43 @@
                     <th>Typical metrics</th>
                 </tr>
             </thead>
+
             <tbody>
+
                 <tr>
                     <td><strong>Inputs</strong></td>
                     <td>What resources did we invest?</td>
                     <td>Budget, people, hours, resources</td>
                 </tr>
+
                 <tr>
                     <td><strong>Activities</strong></td>
                     <td>How efficiently did we execute?</td>
                     <td>Schedule, cost, milestones, risks</td>
                 </tr>
+
                 <tr>
                     <td><strong>Outputs</strong></td>
                     <td>What did we actually deliver?</td>
                     <td>Deliverables, scope, features, defects</td>
                 </tr>
+
                 <tr>
                     <td><strong>Outcomes</strong></td>
                     <td>Did performance or behavior change?</td>
                     <td>Adoption, usage, productivity, satisfaction</td>
                 </tr>
+
                 <tr>
                     <td><strong>Impact</strong></td>
                     <td>Did the project create meaningful value?</td>
                     <td>Revenue, savings, ROI, strategic objectives</td>
                 </tr>
+
             </tbody>
+
         </table>
+
     </div>
 
     <p class="quote">
@@ -119,33 +1222,48 @@
         definition of project success.
     </p>
 
+
+    <!-- =========================================================
+         2
+         ========================================================= -->
+
     <h2>2. Level 1 — Inputs</h2>
 
     <p>
-        Inputs are the resources invested in the project. They do not tell us
-        whether the project was successful, but they establish the baseline
-        against which efficiency and value can be measured.
+        Inputs are the resources invested in the project.
+        They do not tell us whether the project was successful,
+        but they establish the baseline against which efficiency
+        and value can be measured.
     </p>
 
     <div class="cards">
+
         <div class="card">
             <div class="card-number">Input metric</div>
             <h3>Budget</h3>
-            <p>The approved financial resources available to the project.</p>
+            <p>
+                The approved financial resources available to the project.
+            </p>
         </div>
 
         <div class="card">
             <div class="card-number">Input metric</div>
             <h3>Planned effort</h3>
-            <p>Total human effort expected to be required.</p>
+            <p>
+                Total human effort expected to be required.
+            </p>
         </div>
 
         <div class="card">
             <div class="card-number">Input metric</div>
             <h3>Resource utilization</h3>
-            <p>How much available capacity is actually being used.</p>
+            <p>
+                How much available capacity is actually being used.
+            </p>
         </div>
+
     </div>
+
 
     <h3>2.1 Planned effort</h3>
 
@@ -154,13 +1272,17 @@
     </div>
 
     <div class="example">
+
         <strong>Example:</strong><br>
+
         5 developers × 1,200 hours = 6,000 hours<br>
         2 project managers × 1,000 hours = 2,000 hours<br>
         1 designer × 800 hours = 800 hours<br><br>
 
         <strong>Total planned effort = 8,800 hours</strong>
+
     </div>
+
 
     <h3>2.2 Resource utilization</h3>
 
@@ -170,17 +1292,27 @@
     </div>
 
     <div class="example">
-        If the team has 10,000 available hours and spends 8,500 hours
-        on project work:
+
+        If the team has 10,000 available hours and spends
+        8,500 hours on project work:
+
         <br><br>
-        8,500 ÷ 10,000 × 100 = <strong>85% utilization</strong>
+
+        8,500 ÷ 10,000 × 100 =
+        <strong>85% utilization</strong>
+
     </div>
 
     <p>
-        Utilization should not automatically be maximized. Extremely high
-        utilization can create bottlenecks, reduce flexibility and increase
-        the risk of burnout.
+        Utilization should not automatically be maximized.
+        Extremely high utilization can create bottlenecks,
+        reduce flexibility and increase the risk of burnout.
     </p>
+
+
+    <!-- =========================================================
+         3
+         ========================================================= -->
 
     <h2>3. Level 2 — Activities</h2>
 
@@ -189,6 +1321,7 @@
         Typical metrics include schedule, cost, milestones, productivity
         and risk.
     </p>
+
 
     <h3>3.1 Schedule variance</h3>
 
@@ -199,10 +1332,16 @@
     </div>
 
     <div class="example">
+
         A project planned for 10 months takes 11 months:
+
         <br><br>
-        (11 − 10) ÷ 10 × 100 = <strong>10% schedule overrun</strong>
+
+        (11 − 10) ÷ 10 × 100 =
+        <strong>10% schedule overrun</strong>
+
     </div>
+
 
     <h3>3.2 Milestone achievement</h3>
 
@@ -213,10 +1352,16 @@
     </div>
 
     <div class="example">
+
         18 of 20 milestones were completed on time:
+
         <br><br>
-        18 ÷ 20 × 100 = <strong>90%</strong>
+
+        18 ÷ 20 × 100 =
+        <strong>90%</strong>
+
     </div>
+
 
     <h3>3.3 Budget variance</h3>
 
@@ -227,12 +1372,17 @@
     </div>
 
     <div class="example">
+
         Planned cost = €500,000<br>
         Actual cost = €525,000
+
         <br><br>
+
         (€525,000 − €500,000) ÷ €500,000 × 100 =
         <strong>5% over budget</strong>
+
     </div>
+
 
     <h3>3.4 Cost Performance Index</h3>
 
@@ -241,36 +1391,55 @@
     </div>
 
     <div class="example">
+
         Earned Value = €450,000<br>
         Actual Cost = €500,000
+
         <br><br>
+
         CPI = 450,000 ÷ 500,000 =
         <strong>0.90</strong>
+
         <br><br>
-        A CPI below 1.0 indicates that the project is spending more than
-        the value of work earned according to the baseline.
+
+        A CPI below 1.0 indicates that the project is spending
+        more than the value of work earned according to the baseline.
+
     </div>
+
 
     <h3>3.5 Risk exposure</h3>
 
     <div class="formula">
-        Risk exposure = Probability of occurrence × Financial impact
+        Risk exposure =
+        Probability of occurrence × Financial impact
     </div>
 
     <div class="example">
+
         Probability = 20%<br>
         Potential impact = €200,000
+
         <br><br>
-        20% × €200,000 = <strong>€40,000 expected exposure</strong>
+
+        20% × €200,000 =
+        <strong>€40,000 expected exposure</strong>
+
     </div>
+
+
+    <!-- =========================================================
+         4
+         ========================================================= -->
 
     <h2>4. Level 3 — Outputs</h2>
 
     <p>
-        Outputs represent what the project actually produced. Examples include
-        a new software system, product, facility, process, training program
-        or research report.
+        Outputs represent what the project actually produced.
+        Examples include a new software system, product, facility,
+        process, training program or research report.
     </p>
+
 
     <h3>4.1 Deliverable completion rate</h3>
 
@@ -280,16 +1449,22 @@
     </div>
 
     <div class="example">
+
         28 of 30 deliverables were accepted:
+
         <br><br>
-        28 ÷ 30 × 100 = <strong>93.3%</strong>
+
+        28 ÷ 30 × 100 =
+        <strong>93.3%</strong>
+
     </div>
 
     <p>
-        The important word here is <strong>accepted</strong>. A deliverable
-        should ideally be considered complete only when it satisfies predefined
-        acceptance criteria.
+        The important word here is <strong>accepted</strong>.
+        A deliverable should ideally be considered complete only
+        when it satisfies predefined acceptance criteria.
     </p>
+
 
     <h3>4.2 Scope achievement</h3>
 
@@ -299,15 +1474,22 @@
     </div>
 
     <div class="example">
-        A software project committed to 100 requirements and delivered 95:
+
+        A software project committed to 100 requirements
+        and delivered 95:
+
         <br><br>
-        95 ÷ 100 × 100 = <strong>95%</strong>
+
+        95 ÷ 100 × 100 =
+        <strong>95%</strong>
+
     </div>
 
     <p>
-        However, simple scope counting can be misleading. Missing one critical
-        requirement may matter much more than missing five minor requirements.
-        For this reason, weighted scope achievement can be more useful.
+        However, simple scope counting can be misleading.
+        Missing one critical requirement may matter much more
+        than missing five minor requirements. For this reason,
+        weighted scope achievement can be more useful.
     </p>
 
     <div class="formula">
@@ -315,8 +1497,11 @@
         Σ(weight × completion) ÷ Σ(weight)
     </div>
 
+
     <div class="table-wrapper">
+
         <table>
+
             <thead>
                 <tr>
                     <th>Requirement</th>
@@ -324,29 +1509,37 @@
                     <th>Completion</th>
                 </tr>
             </thead>
+
             <tbody>
+
                 <tr>
                     <td>Feature A</td>
                     <td>10</td>
                     <td>100%</td>
                 </tr>
+
                 <tr>
                     <td>Feature B</td>
                     <td>30</td>
                     <td>100%</td>
                 </tr>
+
                 <tr>
                     <td>Feature C</td>
                     <td>40</td>
                     <td>100%</td>
                 </tr>
+
                 <tr>
                     <td>Feature D</td>
                     <td>20</td>
                     <td>50%</td>
                 </tr>
+
             </tbody>
+
         </table>
+
     </div>
 
     <p>
@@ -355,6 +1548,11 @@
         <strong>90%</strong>
     </p>
 
+
+    <!-- =========================================================
+         5
+         ========================================================= -->
+
     <h2>5. Level 4 — Outcomes</h2>
 
     <p>
@@ -362,26 +1560,37 @@
         An outcome describes a change resulting from the project.
     </p>
 
+
     <div class="comparison">
+
         <div>
+
             <h3>Output</h3>
+
             <p>
                 A new automated invoicing system was launched.
             </p>
+
         </div>
 
         <div>
+
             <h3>Outcome</h3>
+
             <p>
                 Employees now process invoices 40% faster.
             </p>
+
         </div>
+
     </div>
+
 
     <p>
         The output is something the project directly produces.
         The outcome is the change created by that output.
     </p>
+
 
     <h3>5.1 Adoption rate</h3>
 
@@ -391,16 +1600,23 @@
     </div>
 
     <div class="example">
-        1,500 of 2,000 target employees actively use the new system:
+
+        1,500 of 2,000 target employees actively use
+        the new system:
+
         <br><br>
-        1,500 ÷ 2,000 × 100 = <strong>75% adoption</strong>
+
+        1,500 ÷ 2,000 × 100 =
+        <strong>75% adoption</strong>
+
     </div>
 
     <p>
-        Define "active user" before calculating adoption. For example:
-        an active user might be someone who completes at least one transaction
-        per week.
+        Define "active user" before calculating adoption.
+        For example, an active user might be someone who completes
+        at least one transaction per week.
     </p>
+
 
     <h3>5.2 Usage frequency</h3>
 
@@ -410,9 +1626,12 @@
     </div>
 
     <div class="example">
+
         60,000 transactions ÷ 1,500 active users =
         <strong>40 transactions per user</strong>
+
     </div>
+
 
     <h3>5.3 Process improvement</h3>
 
@@ -423,20 +1642,30 @@
     </div>
 
     <div class="example">
+
         Processing time falls from 10 days to 6 days:
+
         <br><br>
+
         (10 − 6) ÷ 10 × 100 =
         <strong>40% improvement</strong>
+
     </div>
+
 
     <h3>5.4 Error reduction</h3>
 
     <div class="example">
+
         If the error rate falls from 5% to 2%:
+
         <br><br>
+
         (5% − 2%) ÷ 5% × 100 =
         <strong>60% reduction in errors</strong>
+
     </div>
+
 
     <h3>5.5 Customer satisfaction</h3>
 
@@ -446,9 +1675,14 @@
     </div>
 
     <div class="example">
+
         420 of 500 respondents are satisfied:
+
         <br><br>
-        420 ÷ 500 × 100 = <strong>84% CSAT</strong>
+
+        420 ÷ 500 × 100 =
+        <strong>84% CSAT</strong>
+
     </div>
 
     <p>
@@ -460,17 +1694,27 @@
     </div>
 
     <div class="example">
+
         Promoters = 55%<br>
         Detractors = 15%
+
         <br><br>
-        NPS = 55 − 15 = <strong>+40</strong>
+
+        NPS = 55 − 15 =
+        <strong>+40</strong>
+
     </div>
+
+
+    <!-- =========================================================
+         6
+         ========================================================= -->
 
     <h2>6. Level 5 — Impact</h2>
 
     <p>
-        Impact is the highest level of the funnel. It answers the most important
-        question:
+        Impact is the highest level of the funnel.
+        It answers the most important question:
     </p>
 
     <p class="quote">
@@ -483,6 +1727,7 @@
         increased market share or achievement of a strategic objective.
     </p>
 
+
     <h3>6.1 Cost savings</h3>
 
     <div class="formula">
@@ -490,16 +1735,23 @@
     </div>
 
     <div class="example">
+
         Before automation:<br>
         Annual process cost = €1,000,000
+
         <br><br>
+
         After automation:<br>
         Annual process cost = €700,000
+
         <br><br>
+
         Annual saving =
         €1,000,000 − €700,000 =
         <strong>€300,000</strong>
+
     </div>
+
 
     <h3>6.2 Revenue impact</h3>
 
@@ -509,19 +1761,28 @@
     </div>
 
     <div class="example">
+
         Baseline annual revenue = €10M<br>
         Revenue after project = €11.2M
+
         <br><br>
+
         Incremental revenue =
         €11.2M − €10M =
         <strong>€1.2M</strong>
+
     </div>
 
     <p>
-        However, attribution matters. Other factors such as market growth,
-        pricing, seasonality and competitor behavior may also have contributed
-        to the increase.
+        However, attribution matters.
+        Other factors such as market growth, pricing, seasonality
+        and competitor behavior may also have contributed to the increase.
     </p>
+
+
+    <!-- =========================================================
+         7
+         ========================================================= -->
 
     <h2>7. Return on Investment</h2>
 
@@ -536,17 +1797,27 @@
     </div>
 
     <div class="example">
+
         Project cost = €500,000<br>
         Financial benefit = €800,000
+
         <br><br>
+
         (€800,000 − €500,000) ÷ €500,000 × 100 =
         <strong>60% ROI</strong>
+
     </div>
 
     <p>
-        Always specify the measurement period. For example:
+        Always specify the measurement period.
+        For example:
         <strong>"The project generated a 60% ROI over three years."</strong>
     </p>
+
+
+    <!-- =========================================================
+         8
+         ========================================================= -->
 
     <h2>8. Payback Period</h2>
 
@@ -561,17 +1832,28 @@
     </div>
 
     <div class="example">
+
         Initial investment = €600,000<br>
         Annual net benefit = €200,000
+
         <br><br>
+
         €600,000 ÷ €200,000 =
         <strong>3 years</strong>
+
     </div>
+
+
+    <!-- =========================================================
+         9
+         ========================================================= -->
 
     <h2>9. Complete Project Success Metrics Table</h2>
 
     <div class="table-wrapper">
+
         <table>
+
             <thead>
                 <tr>
                     <th>Funnel</th>
@@ -583,6 +1865,7 @@
             </thead>
 
             <tbody>
+
                 <tr>
                     <td>Input</td>
                     <td>Budget</td>
@@ -766,9 +2049,17 @@
                     <td>80%</td>
                     <td>Strategic success</td>
                 </tr>
+
             </tbody>
+
         </table>
+
     </div>
+
+
+    <!-- =========================================================
+         10
+         ========================================================= -->
 
     <h2>10. Establish a Baseline Before the Project Starts</h2>
 
@@ -781,7 +2072,9 @@
     </p>
 
     <div class="table-wrapper">
+
         <table>
+
             <thead>
                 <tr>
                     <th>Metric</th>
@@ -790,39 +2083,48 @@
                     <th>After project</th>
                 </tr>
             </thead>
+
             <tbody>
+
                 <tr>
                     <td>Processing time</td>
                     <td>10 min</td>
                     <td>7 min</td>
                     <td>6 min</td>
                 </tr>
+
                 <tr>
                     <td>Error rate</td>
                     <td>5%</td>
                     <td>&lt;3%</td>
                     <td>2%</td>
                 </tr>
+
                 <tr>
                     <td>Adoption</td>
                     <td>0%</td>
                     <td>70%</td>
                     <td>85%</td>
                 </tr>
+
                 <tr>
                     <td>Annual cost</td>
                     <td>€1.0M</td>
                     <td>€800k</td>
                     <td>€750k</td>
                 </tr>
+
                 <tr>
                     <td>Customer satisfaction</td>
                     <td>72%</td>
                     <td>80%</td>
                     <td>84%</td>
                 </tr>
+
             </tbody>
+
         </table>
+
     </div>
 
     <p>
@@ -837,6 +2139,11 @@
         This is much more informative than looking only at the final result.
     </p>
 
+
+    <!-- =========================================================
+         11
+         ========================================================= -->
+
     <h2>11. Targets vs. Actual Results</h2>
 
     <p>
@@ -844,6 +2151,7 @@
     </p>
 
     <div class="cards">
+
         <div class="card">
             <div class="card-number">01</div>
             <h3>Baseline</h3>
@@ -867,7 +2175,9 @@
             <h3>Variance</h3>
             <p>How far above or below target are we?</p>
         </div>
+
     </div>
+
 
     <h3>Target achievement</h3>
 
@@ -882,26 +2192,39 @@
     </div>
 
     <div class="example">
+
         Baseline = 10 minutes<br>
         Target = 7 minutes<br>
         Actual = 6 minutes
+
         <br><br>
+
         (10 − 6) ÷ (10 − 7) =
         <strong>1.33 or 133%</strong>
+
         <br><br>
+
         The project achieved approximately 133% of the planned improvement.
+
     </div>
+
+
+    <!-- =========================================================
+         12
+         ========================================================= -->
 
     <h2>12. Build a Balanced Project Scorecard</h2>
 
     <p>
-        Avoid creating a dashboard with dozens of KPIs. A strong project
-        dashboard normally focuses on a small number of indicators that
-        collectively represent success.
+        Avoid creating a dashboard with dozens of KPIs.
+        A strong project dashboard normally focuses on a small number
+        of indicators that collectively represent success.
     </p>
 
     <div class="table-wrapper">
+
         <table>
+
             <thead>
                 <tr>
                     <th>Dimension</th>
@@ -913,6 +2236,7 @@
             </thead>
 
             <tbody>
+
                 <tr>
                     <td>Delivery</td>
                     <td>15%</td>
@@ -960,15 +2284,24 @@
                     <td>≥40%</td>
                     <td>65%</td>
                 </tr>
+
             </tbody>
+
         </table>
+
     </div>
 
     <p>
-        The weights should depend on the type of project. For example,
-        compliance may dominate a regulatory project, while adoption and
-        customer outcomes may be more important for a digital product.
+        The weights should depend on the type of project.
+        For example, compliance may dominate a regulatory project,
+        while adoption and customer outcomes may be more important
+        for a digital product.
     </p>
+
+
+    <!-- =========================================================
+         13
+         ========================================================= -->
 
     <h2>13. Example: Measuring an Automation Project</h2>
 
@@ -977,12 +2310,14 @@
         The project has a budget of €400,000.
     </p>
 
+
     <h3>Inputs</h3>
 
     <p>
         Budget: <strong>€400,000</strong><br>
         Planned effort: <strong>6,000 hours</strong>
     </p>
+
 
     <h3>Activities</h3>
 
@@ -992,7 +2327,8 @@
     </p>
 
     <div class="formula">
-        (9 − 8) ÷ 8 × 100 = 12.5% schedule delay
+        (9 − 8) ÷ 8 × 100 =
+        12.5% schedule delay
     </div>
 
     <p>
@@ -1005,6 +2341,7 @@
         5% over budget
     </div>
 
+
     <h3>Outputs</h3>
 
     <p>
@@ -1016,6 +2353,7 @@
         <strong>Scope achievement = 95%</strong>
     </p>
 
+
     <h3>Outcomes</h3>
 
     <p>
@@ -1023,7 +2361,8 @@
     </p>
 
     <div class="formula">
-        850 ÷ 1,000 × 100 = 85% adoption
+        850 ÷ 1,000 × 100 =
+        85% adoption
     </div>
 
     <p>
@@ -1043,6 +2382,7 @@
         (5 − 2) ÷ 5 × 100 =
         60% reduction in errors
     </div>
+
 
     <h3>Impact</h3>
 
@@ -1065,7 +2405,9 @@
         78.6%
     </div>
 
+
     <div class="callout">
+
         <h3>What does this tell us?</h3>
 
         <p>
@@ -1078,7 +2420,13 @@
             This is a much more complete assessment than simply saying:
             <strong>"The project was late."</strong>
         </p>
+
     </div>
+
+
+    <!-- =========================================================
+         14
+         ========================================================= -->
 
     <h2>14. The Most Important Principle</h2>
 
@@ -1091,7 +2439,9 @@
         They connect project execution to business results:
     </p>
 
+
     <div class="funnel">
+
         <div class="funnel-step">
             <strong>Resources invested</strong>
             <span>Money · People · Time</span>
@@ -1116,13 +2466,21 @@
             <strong>Business value created</strong>
             <span>Revenue · Savings · ROI · Strategy</span>
         </div>
+
     </div>
 
+
+    <!-- =========================================================
+         CONCLUSION
+         ========================================================= -->
+
     <div class="final">
+
         <h2>Conclusion</h2>
 
         <p>
-            Project success should be measured as a <strong>chain of evidence</strong>,
+            Project success should be measured as a
+            <strong>chain of evidence</strong>,
             not as a single KPI.
         </p>
 
@@ -1157,9 +2515,41 @@
             "Did the project create the intended change and generate enough
             value to justify the investment?"
         </p>
+
     </div>
 
+
+    <!-- =========================================================
+         ARTICLE FOOTER
+         ========================================================= -->
+
+    <div class="article-footer">
+
+        <span class="article-footer-label">
+            Ogalanets · Insights & Thought Leadership
+        </span>
+
+        <a href="/#insights" class="back-link">
+            ← Back to Insights
+        </a>
+
+    </div>
+
+
 </main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+    <strong>Ogalanets</strong>
+    · Digital Transformation · Program Leadership · AI-ready ecosystems
+
+</footer>
+
 
 </body>
 </html>
